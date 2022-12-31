@@ -8,6 +8,7 @@ from .exceptions import WhoisCommandFailed
 
 from typing import Dict, List, Optional, Tuple
 
+from .socket_whois import get_whois_data
 
 PYTHON_VERSION = sys.version_info[0]
 CACHE: Dict[str, Tuple[int, str]] = {}
@@ -154,11 +155,14 @@ def _do_whois_query(
 ) -> str:
     # if getenv[TEST_WHOIS_PYTON] fake whois by reading static data from a file
     # this wasy we can actually implemnt a test run with known data in and expected data out
+
+    return get_whois_data(dl)
+
     if os.getenv("TEST_WHOIS_PYTHON"):
         return testWhoisPythonFromStaticTestData(dl, ignore_returncode, server, verbose)
 
     cmd = makeWhoisCommandToRun(dl, server, verbose)
-
+    print(' '.join(cmd))
     # LANG=en is added to make the ".jp" output consist across all environments
     p = subprocess.Popen(
         cmd,
