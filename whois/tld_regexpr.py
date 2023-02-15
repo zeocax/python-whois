@@ -41,9 +41,38 @@ ac_uk = {
     "updated_date": r"Entry updated:\n\s*(.+)",
     "creation_date": r"Entry created:\n\s?(.+)",
     "name_servers": r"Servers:\s*(.+)\t\n\s*(.+)\t\n",
+    "_server": "whois.ja.net",
+}
+
+
+gov_uk = {
+    "extend": "uk",
+    "domain_name": r"Domain:\n\s?(.+)",
+    "owner": r"Domain Owner:\n\s?(.+)",
+    "registrar": r"Registered By:\n\s?(.+)",
+    "registrant": r"Registered Contact:\n\s*(.+)",
+    "expiration_date": r"Renewal date:\n\s*(.+)",
+    "updated_date": r"Entry updated:\n\s*(.+)",
+    "creation_date": r"Entry created:\n\s?(.+)",
+    "name_servers": r"Servers:\s*(.+)\t\n\s*(.+)\t\n",
+    "_server": "whois.ja.net",
 }
 
 co_uk = {
+    "extend": "uk",
+    "domain_name": r"Domain name:\s+(.+)",
+    "registrar": r"Registrar:\s+(.+)",
+    "name_servers": r"Name servers:\s+(.+)\s+(.+)",
+    "status": r"Registration status:\s*(.+)",
+    "creation_date": r"Registered on:(.+)",
+    "expiration_date": r"Expiry date:(.+)",
+    "updated_date": r"Last updated:(.+)",
+    "owner": r"Domain Owner:\s+(.+)",
+    "registrant": r"Registered Contact:\s+(.+)",
+}
+
+
+org_uk = {
     "extend": "uk",
     "domain_name": r"Domain name:\s+(.+)",
     "registrar": r"Registrar:\s+(.+)",

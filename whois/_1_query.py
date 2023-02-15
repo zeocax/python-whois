@@ -156,7 +156,7 @@ def _do_whois_query(
     # if getenv[TEST_WHOIS_PYTON] fake whois by reading static data from a file
     # this wasy we can actually implemnt a test run with known data in and expected data out
 
-    return get_whois_data(dl)
+    return get_whois_data(dl, server)
 
     if os.getenv("TEST_WHOIS_PYTHON"):
         return testWhoisPythonFromStaticTestData(dl, ignore_returncode, server, verbose)
