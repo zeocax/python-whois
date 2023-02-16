@@ -157,6 +157,10 @@ au = {
     "updated_date": r"Last Modified:([^\n]*)",  # fix empty LastModified
 }
 
+org_au = {
+    "extend": "au",
+}
+
 ax = {
     "extend": "com",
     "domain_name": r"domain\.+:\s*(\S+)",
@@ -931,6 +935,42 @@ ru = {
     "status": r"\nstate:\s*(.+)",
 }
 
+ru = {
+    "extend": "com",
+    "domain_name": r"\ndomain:\s*(.+)",
+    "creation_date": r"\ncreated:\s*(.+)",
+    "expiration_date": r"\npaid-till:\s*(.+)",
+    "name_servers": r"\nnserver:\s*(.+)",
+    "status": r"\nstate:\s*(.+)",
+}
+
+net_ru = {
+    "extend": "_privateReg",  # This TLD has no whois server
+    "domain_name": r"\ndomain:\s*(.+)",
+    "creation_date": r"\ncreated:\s*(.+)",
+    "expiration_date": r"\npaid-till:\s*(.+)",
+    "name_servers": r"\nnserver:\s*(.+)",
+    "status": r"\nstate:\s*(.+)",
+}
+
+pp_ru = {
+    "extend": "_privateReg",  # This TLD has no whois server
+    "domain_name": r"\ndomain:\s*(.+)",
+    "creation_date": r"\ncreated:\s*(.+)",
+    "expiration_date": r"\npaid-till:\s*(.+)",
+    "name_servers": r"\nnserver:\s*(.+)",
+    "status": r"\nstate:\s*(.+)",
+}
+
+org_ru = {
+    "extend": "_privateReg",  # This TLD has no whois server
+    "domain_name": r"\ndomain:\s*(.+)",
+    "creation_date": r"\ncreated:\s*(.+)",
+    "expiration_date": r"\npaid-till:\s*(.+)",
+    "name_servers": r"\nnserver:\s*(.+)",
+    "status": r"\nstate:\s*(.+)",
+}
+
 # Rossíyskaya Federátsiya) is the Cyrillic country code top-level domain for the Russian Federation,
 # In the Domain Name System it has the ASCII DNS name xn--p1ai.
 
@@ -1511,6 +1551,13 @@ xyz = {"extend": "_centralnic"}
 yachts = {"extend": "_centralnic"}
 zuerich = {"extend": "_centralnic"}
 
+# (.+).(com|net)
+uk_com = {"extend": "_centralnic"}
+eu_com = {"extend": "_centralnic"}
+co_com = {"extend": "_centralnic"}
+uk_net = {"extend": "_centralnic"}
+
+
 # mboot added start
 # note i extract the whois server for each toplevel domain using: https://github.com/jophy/iana_tld_list
 # of which i am a contributer
@@ -1562,7 +1609,7 @@ bet = {
 bg = {
     "extend": None,
     "_server": "whois.register.bg",
-    "domain_name": r"DOMAIN\s+NAME:\s+(.+)",
+    "domain_name": r"DOMAIN\s+NAME:\s+(.+)\(.+\)",  # DOMAIN NAME: example.bg (example.bg)
     "status": r"registration\s+status:\s(.+)",
     "name_servers": r"NAME SERVER INFORMATION:\n(?:(.+)\n)(?:(.+)\n)?(?:(.+)\n)?(?:(.+)\n)?",
     "creation_date": None,

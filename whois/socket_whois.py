@@ -32,7 +32,7 @@ def get_whois_data(dl: list[str], server: str = None) -> str:
         whois_server = server
     else:
         whois_server = get_whois_server(extension=extension)
-    # Fpr .jp domain, to suppress Japanese output, add '/e' at the end of command.
+    # For .jp domain, to suppress Japanese output, add '/e' at the end of command.
     msg = perform_whois(server=whois_server, query=domain + "/e" if extension == "jp" else domain)
     # print(msg)
     return msg
