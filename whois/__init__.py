@@ -114,7 +114,7 @@ Map2Underscore = {
     ".uk.com": "uk_com",
     ".eu.com": "eu_com",
     ".co.com": "co_com",
-    ".eu.net": "eu_net",
+    ".uk.net": "uk_net",
 }
 
 PythonKeyWordMap = {
