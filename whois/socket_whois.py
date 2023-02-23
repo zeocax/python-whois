@@ -13,6 +13,7 @@ def perform_whois(server: str, query: str) -> str:
         if chunk == "":
             break
         msg = msg + chunk
+    # print(msg)
     return msg
 
 

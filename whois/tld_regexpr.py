@@ -834,16 +834,31 @@ nyc = {
 
 nz = {
     "extend": None,
-    "domain_name": r"domain_name:\s?(.+)",
-    "registrar": r"registrar_name:\s?(.+)",
-    "registrant": r"registrant_contact_name:\s?(.+)",
+    "domain_name": r"Domain Name:\s?(.+)",
+    "registrar": r"Registrar:\s?(.+)",
     "registrant_country": None,
-    "creation_date": r"domain_dateregistered:\s?(.+)",
-    "expiration_date": r"domain_datebilleduntil:\s?(.+)",
-    "updated_date": r"domain_datelastmodified:\s?(.+)",
-    "name_servers": r"ns_name_[0-9]{2}:\s?(.+)",
-    "status": r"query_status:\s?(.+)",
-    "emails": r"[\w\.-]+@[\w\.-]+\.[\w]{2,4}",
+    "creation_date": r"Creation Date:\s?(.+)",
+    "expiration_date": None,
+    "updated_date": r"Updated Date:\s?(.+)",
+    "name_servers": r"Name Server:\s?(.+)",
+    "status": r"Domain Status:\s?(.+)",
+    "_server": "whois.srs.net.nz",
+}
+
+co_nz = {
+    "extend": "nz",
+}
+
+org_nz = {
+    "extend": "nz",
+}
+
+school_nz = {
+    "extend": "nz",
+}
+
+govt_nz = {
+    "extend": "nz",
 }
 
 org = {
